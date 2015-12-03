@@ -502,6 +502,8 @@ files, separated by spaces.
 
 What happens if you do ``ls R1*fastq``?
 
+(Time for another quizlet!)
+
 Examining Files
 ---------------
 
@@ -546,7 +548,7 @@ are identical to the ``man`` program.
 | key     | action |
 | ------- | ---------- |
 | "space" | to go forward |
-|  "b"    | to go backwarsd |
+|  "b"    | to go backwards |
 |  "g"    | to go to the beginning |
 |  "G"    | to go to the end |
 |  "q"    | to quit |
@@ -657,10 +659,8 @@ The ``rm`` file removes the file. Be careful with this command. It doesn't
 just nicely put the files in the Trash. They're really gone.
 
 By default, ``rm``, will NOT delete directories. You can tell ``rm`` to
-delete a directory using the ``-r`` option. Let's delete that ``new`` directory
-we just made. Enter the following command::
-
-    rm -r new
+delete a directory using the ``-r`` option; we could test it out on
+backup, but let's not... ;)
 
 (Time for a quizlet again!)
 
@@ -672,15 +672,15 @@ if we want to write our own files. Obviously, we're not going to type in
 a FASTA file, but you'll see as we go through other tutorials, there are
 a lot of reasons we'll want to write a file, or edit an existing file.
 
-To write in files, we're going to use the program ``nano``. We're going to create
-a file that contains the favorite grep command so you can remember it for later. We'll name this file
-'awesome.sh'.
+To write in files, we're going to use the program ``nano``. We're
+going to create a file that contains the favorite grep command so you
+can remember it for later. We'll name this file 'awesome.sh'::
 
     nano awesome.sh
 
 Now you have something that looks like
 
-.. image:: img/nano1.pong
+.. image:: img/nano1.png
 
 Type in your command, so it looks like
 
