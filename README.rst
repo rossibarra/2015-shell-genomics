@@ -18,10 +18,12 @@ Objectives
 - What is the shell?
 - How do you access it?
 - How do you use it and what is it good for?
+
   * Running commands
   * Storing files in folders
   * Manipulating files
   * Automating actions
+
 - Where are resources where I can learn more?
 
 What is the shell?
@@ -642,8 +644,8 @@ move files around using the command ``mv``. Enter this command::
 
     mv stability.files_backup backup/
 
-This moves ``stability.files_backup`` into the directory ``backup/`` or
-the full path would be ``~/data/MiSeq/backup`` ::
+This moves ``stability.files_backup`` into the directory ``backup/``;
+the full path would be ``~/data/MiSeq/backup``.
 
 The ``mv`` command is also how you rename files. Since this file is so
 important, let's rename it::
@@ -698,9 +700,6 @@ Now you've written a file. You can take a look at it with less or cat, or open i
 Open 'awesome.sh' and add "echo AWESOME!" after the grep command and save the file.
 
 We're going to come back and use this file in just a bit.
-
-***
-
 
 Running programs, revisited
 ---------------------------
@@ -822,7 +821,7 @@ More resources
 - http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
 - man bash
 - Google - if you don't know how to do something, try Googling it. Other people
-have probably had the same question.
+  have probably had the same question.
 
 Most importantly - learn by doing. There's no real other way to learn
 this than by trying it out.  Write your next paper in nano (really
@@ -831,6 +830,6 @@ don't really need to automate....
 
 Some books you should look into --
 
-1. ``Practical Computing for Biologists <http://practicalcomputing.org/>``__
+1. `Practical Computing for Biologists <http://practicalcomputing.org/>`__
 
-2. ``Bioinformatics Data Skills <http://shop.oreilly.com/product/0636920030157.do>``__
+2. `Bioinformatics Data Skills <http://shop.oreilly.com/product/0636920030157.do>`__
