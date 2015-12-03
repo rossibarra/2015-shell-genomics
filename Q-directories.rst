@@ -18,3 +18,35 @@ What is the path starting with '/' (i.e. the full path) to a file
 
 4. /home/user/work/figures/output.png
 
+---------
+
+.
+.
+.
+.
+
+Question 2
+----------
+
+Suppose you have a directory::
+
+   /home/user/work
+
+with subdirectories 'data', 'analyses', and 'figures'.
+
+If your current working directory is /home/user/work, what does 'ls' print
+out?
+
+1. work
+
+2. data, analyses, figures
+
+3. /home/user/work
+
+4. nothing
+
+
+.
+.
+.
+.
