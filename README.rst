@@ -776,7 +776,7 @@ like it so much, we might want to run it again, or even all the
 time. Instead of writing it out every time, we can just run it as a
 script.
 
-It's a command, so we should just be able to run it. Give it try.
+It's a command, so we should just be able to run it. Give it try.::
 
     ./awesome.sh
 
@@ -785,11 +785,11 @@ we haven't told the computer that it's a program. To do that we have
 to make it 'executable'. We do this by changing its mode. The command
 for that is ``chmod`` - change mode. We're going to change the mode of
 this file, so that it's executable and the computer knows it's OK to
-run it as a program.
+run it as a program.::
 
     chmod +x awesome.sh
 
-Now let's try running it again
+Now let's try running it again::
 
     ./awesome.sh
 
