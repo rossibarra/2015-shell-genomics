@@ -798,6 +798,21 @@ Now you should have seen some output, and of course, it's AWESOME!
 Congratulations, you just created your first shell script! You're set
 to rule the world!
 
+Challenge:
+~~~~~~~~~~
+
+write a script that:
+
+- resides in the data directory;
+- changes to the MiSeq/ subdirectory of the current working directory;
+- makes two subdirectories, "left" and "right";
+- moves all of the R1 sequencing files into the left directory;
+- moves all of the R2 sequencing files into the right directory;
+
+-----
+
+And we're done!
+
 More resources
 --------------
 
