@@ -315,7 +315,8 @@ too; for example, ::
 You can do the same thing with any UNIX command that takes a file or
 directory name.
 
-### Shortcut: Tab Completion
+Shortcut: Tab Completion
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Navigate to the home directory. Typing out directory names can waste a
 lot of time. When you start typing out the name of a directory, then
@@ -339,7 +340,8 @@ enter `e<tab><tab>`. You will see the name of every program that
 starts with an `e`. One of those is `echo`. If you enter `ec<tab>` you
 will see that tab completion works.
 
-## Full vs. Relative Paths
+Full vs. Relative Paths
+-----------------------
 
 The `cd` command takes an argument which is the directory
 name. Directories can be specified using either a *relative* path or a
@@ -414,7 +416,7 @@ above your current directory. Thus:
 
     ls ..
 
-prints the contents of the `/home/username. You can chain
+prints the contents of the /home/username directory. You can chain
 these together, so:
 
     ls ../../
@@ -485,6 +487,292 @@ files, separated by spaces.
 
 What happens if you do ``ls R1*fastq``?
 
-Moving and copying files
-------------------------
+Examining Files
+---------------
+
+We now know how to switch directories, run programs, and look at the
+contents of directories, but how do we look at the contents of files?
+
+The easiest way to examine a file is to just print out all of the
+contents using the program `cat`. Enter the following command:
+
+    cat F3D0_S188_L001_R1_001.fastq
+
+This prints out the contents of the `F3D0_S188_L001_R1_001.fastq` file.
+
+1.  Print out the contents of the `~/data/MiSeq/stability.files`
+    file. What does this file contain?
+
+2.  Without changing directories, (you should still be in ``data``),
+    use one short command to print the contents of all of the files in
+    the `/home/username/shell-genomics/data/MiSeq` directory.
+
+* * * *
+
+Make sure we're in the right place for the next set of the lessons. We
+want to be in the `MiSeq` directory. Check if you're there with `pwd`
+and if not navigate there. One way to do that would be ::
+
+    cd ~/data/MiSeq
+
+`cat` is a terrific program, but when the file is really big, it can
+be annoying to use. The program, `less`, is useful for this
+case. Enter the following command::
+
+    less F3D0_S188_L001_R1_001.fastq
+
+`less` opens the file, and lets you navigate through it. The commands
+are identical to the `man` program.
+
+**Some commands in `less`**
+
+| key     | action |
+| ------- | ---------- |
+| "space" | to go forward |
+|  "b"    | to go backwarsd |
+|  "g"    | to go to the beginning |
+|  "G"    | to go to the end |
+|  "q"    | to quit |
+
+`less` also gives you a way of searching through files. Just hit the
+"/" key to begin a search. Enter the name of the word you would like
+to search for and hit enter. It will jump to the next location where
+that word is found. Try searching the `dictionary.txt` file for the
+word "cat". If you hit "/" then "enter", `less` will just repeat
+the previous search. `less` searches from the current location and
+works its way forward. If you are at the end of the file and search
+for the word "cat", `less` will not find it. You need to go to the
+beginning of the file and search.
+
+For instance, let's search for the sequence `1101:14341` in our file.
+You can see that we go right to that sequence and can see
+what it looks like.
+
+Remember, the `man` program actually uses `less` internally and
+therefore uses the same commands, so you can search documentation
+using "/" as well!
+
+There's another way that we can look at files, and in this case, just
+look at part of them. This can be particularly useful if we just want
+to see the beginning or end of the file, or see how it's formatted.
+
+The commands are `head` and `tail` and they just let you look at
+the beginning and end of a file respectively. ::
+
+   head F3D0_S188_L001_R1_001.fastq
+   tail F3D0_S188_L001_R1_001.fastq
+
+The `-n` option to either of these commands can be used to print the
+first or last `n` lines of a file. To print the first/last line of the
+file use::
+
+   head -n 1 F3D0_S188_L001_R1_001.fastq
+   tail -n 1 F3D0_S188_L001_R1_001.fastq
+
+Searching files
+---------------
+
+We showed a little how to search within a file using `less`. We can also
+search within files without even opening them, using `grep`. Grep is a command-line
+utility for searching plain-text data sets for lines matching a string or regular expression.
+Let's give it a try!
+
+Let's search for that sequence 1101:14341 in the F3D0_S188_L001_R1_001.fastq file. ::
+
+    grep 1101:14341 F3D0_S188_L001_R1_001.fastq
+
+We get back the whole line that had '1101:14341' in it. What if we wanted all
+four lines, the whole part of that FASTQ sequence, back instead. ::
+
+    grep -A 3 1101:14341 F3D0_S188_L001_R1_001.fastq
+
+The `-A` flag stands for "after match" so it's returning the line that
+matches plus the three after it. The `-B` flag returns that number of lines
+before the match.
+
+Creating, moving, copying, and removing
+---------------------------------------
+
+Now we can move around in the file structure and look at files. But
+what if we want to do normal things like copy files or move them
+around or get rid of them. Sure we could do most of these things
+without the command line, but what fun would that be?! Besides it's
+often faster to do it at the command line, or you'll be on a remote
+server like Amazon where you won't have another option.
+
+The stability.files file is one that tells us what sample name
+goes with what sequences. This is a really important file, so
+we want to make a copy so we don't lose it.
+
+Lets copy the file using the `cp` command. The `cp`
+command backs up the file. Navigate to the `MiSeq` directory and enter::
+
+    cp stability.files stability.files_backup
+
+Now `stability.files_backup` has been created as a copy of `stability.files`.
+
+Let's make a `backup` directory where we can put this file.
+
+The `mkdir` command is used to make a directory. Just enter `mkdir`
+followed by a space, then the directory name. ::
+
+    mkdir backup
+
+We can now move our backed up file in to this directory. We can
+move files around using the command `mv`. Enter this command::
+
+    mv stability.files_backup backup/
+
+This moves `stability.files_backup` into the directory `backup/` or
+the full path would be `~/data/MiSeq/backup` ::
+
+The `mv` command is also how you rename files. Since this file is so
+important, let's rename it::
+
+    mv stability.files stability.files_IMPORTANT
+
+Now the file name has been changed to stability.files_IMPORTANT. Let's delete
+the backup file now::
+
+    rm backup/stability.files_backup
+
+The `rm` file removes the file. Be careful with this command. It doesn't
+just nicely put the files in the Trash. They're really gone.
+
+By default, `rm`, will NOT delete directories. You can tell `rm` to
+delete a directory using the `-r` option. Let's delete that `new` directory
+we just made. Enter the following command:
+
+    rm -r new
+
+Writing files
+-------------
+
+We've been able to do a lot of work with files that already exist, but what
+if we want to write our own files. Obviously, we're not going to type in
+a FASTA file, but you'll see as we go through other tutorials, there are
+a lot of reasons we'll want to write a file, or edit an existing file.
+
+To write in files, we're going to use the program `nano`. We're going to create
+a file that contains the favorite grep command so you can remember it for later. We'll name this file
+'awesome.sh'.
+
+    nano awesome.sh
+
+Now you have something that looks like
+
+.. image:: img/nano1.pong
+
+Type in your command, so it looks like
+
+.. image:: img/nano2.png
+
+Now we want to save the file and exit. At the bottom of nano, you see
+the "^X Exit". That means that we use Ctrl-X to exit. Type
+`Ctrl-X`. It will ask if you want to save it. Type `y` for yes.  Then
+it asks if you want that file name. Hit 'Enter'.
+
+Now you've written a file. You can take a look at it with less or cat, or open it up again and edit it.
+
+***
+**Exercise**
+
+Open 'awesome.sh' and add "echo AWESOME!" after the grep command and save the file.
+
+We're going to come back and use this file in just a bit.
+
+***
+
+
+## Running programs
+
+Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs
+on the computer. A program is just a file that you can *execute*. The
+program `which` tells you the location of a particular program. For
+example::
+
+    which ls
+
+Will return "/bin/ls". Thus, we can see that `ls` is a program that
+sits inside of the `/bin` directory. Now enter::
+
+    which find
+
+You will see that `find` is a program that sits inside of the
+`/usr/bin` directory.
+
+So ... when we enter a program name, like `ls`, and hit enter, how
+does the shell know where to look for that program? How does it know
+to run `/bin/ls` when we enter `ls`. The answer is that when we enter
+a program name and hit enter, there are a few standard places that the
+shell automatically looks. If it can't find the program in any of
+those places, it will print an error saying "command not found". Enter
+the command::
+
+    echo $PATH
+
+This will print out the value of the `PATH` environment variable. More
+on environment variables later. Notice that a list of directories,
+separated by colon characters, is listed. These are the places the
+shell looks for programs to run. If your program is not in this list,
+then an error is printed. The shell ONLY checks in the places listed
+in the `PATH` environment variable.
+
+Navigate to the `shell` directory and list the contents. You will
+notice that there is a program (executable file) called `hello.sh` in
+this directory. Now, try to run the program by entering::
+
+    hello.sh
+
+You should get an error saying that hello.sh cannot be found. That is
+because the directory `/home/username/data` is not in the
+`PATH`. You can run the `hello.sh` program by entering::
+
+    ./hello.sh
+
+Remember that `.` is a shortcut for the current working
+directory. This tells the shell to run the `hello.sh` program which is
+located right here. So, you can run any program by entering the path
+to that program. You can run `hello.sh` equally well by specifying::
+
+    /home/username/data/hello.sh
+
+Or by entering::
+
+    ~/data/hello.sh
+
+When there are no `/` characters, the shell assumes you want to look
+in one of the default places for the program.
+
+## Writing scripts
+
+We know how to write files and run scripts, so I bet you can guess
+where this is headed. We're going to run our own script!
+
+Go in to the 'MiSeq' directory where we created 'awesome.sh'
+before. Remember we wrote our favorite grep command in there. Since we
+like it so much, we might want to run it again, or even all the
+time. Instead of writing it out every time, we can just run it as a
+script.
+
+It's a command, so we should just be able to run it. Give it try.
+
+    ./awesome.sh
+
+Alas, we get `-bash: ./awesome.sh: Permission denied`. This is because
+we haven't told the computer that it's a program. To do that we have
+to make it 'executable'. We do this by changing its mode. The command
+for that is `chmod` - change mode. We're going to change the mode of
+this file, so that it's executable and the computer knows it's OK to
+run it as a program.
+
+    chmod +x awesome.sh
+
+Now let's try running it again
+
+    ./awesome.sh
+
+Now you should have seen some output, and of course, it's AWESOME!
+Congratulations, you just created your first shell script! You're set
+to rule the world1
 
