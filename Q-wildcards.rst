@@ -14,8 +14,6 @@ What does the command 'ls README.txt' print out?
 
 4. data1.csv, data2.csv
 
-`Enter answer <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__
-
 -----
 
 .
@@ -38,8 +36,6 @@ What does the command ``ls *.csv`` print out?
 3. nothing
 
 4. data1.csv, data2.csv
-
-`Enter answer <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__
 
 -----
 
@@ -64,8 +60,6 @@ What does the command 'ls' print out?
 
 4. data1.csv, data2.csv
 
-`Enter answer <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__
-
 -----
 
 .
@@ -88,8 +82,6 @@ What does the command ``ls *1*`` print out?
 3. nothing
 
 4. data1.csv
-
-`Enter answer <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__
 
 -----
 

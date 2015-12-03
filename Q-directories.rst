@@ -18,7 +18,6 @@ What is the path starting with '/' (i.e. the full path) to a file
 
 4. /home/user/work/figures/output.png
 
-`Enter answer <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__
 
 ---------
 
@@ -47,9 +46,6 @@ out?
 
 4. nothing
 
-
-`Enter answer <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__
-
 .
 .
 .
@@ -76,6 +72,4 @@ command you could use to copy the file 'README.txt' from the
 
 4. cp /home/user/work/analyses/README.txt figures
 
-
-`Enter answer <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__
 

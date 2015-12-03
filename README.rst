@@ -10,6 +10,8 @@ Original contributors:
 Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for
 Software Carpentry (http://software-carpentry.org/)
 
+Note: in-class quizlets will be answered `here <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__.
+
 Objectives
 ----------
 
@@ -81,7 +83,7 @@ components of a shell command are doing.
 * http://explainshell.com
 * http://www.commandlinefu.com
 
-.. @CTB move these to the bottom?
+(We'll look at these at the bottom.)
 
 How to access the shell
 -----------------------
@@ -774,5 +776,24 @@ Now let's try running it again
 
 Now you should have seen some output, and of course, it's AWESOME!
 Congratulations, you just created your first shell script! You're set
-to rule the world1
+to rule the world!
 
+More resources
+--------------
+
+- Software Carpentry tutorial - [The Unix shell](http://software-carpentry.org/v4/shell/index.html)
+- The shell handout - [Command Reference](http://files.fosswire.com/2007/08/fwunixref.pdf)
+- [explainshell.com](http://explainshell.com)
+- http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
+- man bash
+- Google - if you don't know how to do something, try Googling it. Other people
+have probably had the same question.
+- Learn by doing. There's no real other way to learn this than by trying it
+out.  Write your next paper in nano (really emacs or vi), open pdfs from
+the command line, automate something you don't really need to automate.
+
+Some books you should look into --
+
+1. `Practical Computing for Biologists <http://practicalcomputing.org/>`__
+
+2. `Bioinformatics Data Skills <http://shop.oreilly.com/product/0636920030157.do>`__
