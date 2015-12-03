@@ -50,3 +50,24 @@ out?
 .
 .
 .
+
+Question 3
+----------
+
+Suppose you have a directory::
+
+   /home/user/work
+
+with subdirectories 'data', 'analyses', and 'figures'.
+
+If your current working directory is /home/user/work/data, what is a
+command you could use to copy the file 'README.txt' from the
+'analyses' directory to the 'figures' directory?
+
+1. cp README.txt figures
+
+2. cp ../analyses/README.txt ../figures
+
+3. cp /home/user/work/analyses/README.txt /home/user/work/figures
+
+4. cp /home/user/work/analyses/README.txt figures
