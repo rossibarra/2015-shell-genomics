@@ -693,7 +693,6 @@ it asks if you want that file name. Hit 'Enter'.
 
 Now you've written a file. You can take a look at it with less or cat, or open it up again and edit it.
 
-***
 **Exercise**
 
 Open 'awesome.sh' and add "echo AWESOME!" after the grep command and save the file.
@@ -703,7 +702,8 @@ We're going to come back and use this file in just a bit.
 ***
 
 
-## Running programs
+Running programs, revisited
+---------------------------
 
 Commands like ``ls``, ``rm``, ``echo``, and ``cd`` are just ordinary programs
 on the computer. A program is just a file that you can *execute*. The
@@ -712,7 +712,7 @@ example::
 
     which ls
 
-Will return "/bin/ls". Thus, we can see that ``ls`` is a program that
+will return "/bin/ls". Thus, we can see that ``ls`` is a program that
 sits inside of the ``/bin`` directory. Now enter::
 
     which find
@@ -730,14 +730,13 @@ the command::
 
     echo $PATH
 
-This will print out the value of the ``PATH`` environment variable. More
-on environment variables later. Notice that a list of directories,
-separated by colon characters, is listed. These are the places the
-shell looks for programs to run. If your program is not in this list,
-then an error is printed. The shell ONLY checks in the places listed
-in the ``PATH`` environment variable.
+This will print out the value of the ``PATH`` environment variable.
+Notice that a list of directories, separated by colon characters, is
+listed. These are the places the shell looks for programs to run. If
+your program is not in this list, then an error is printed. The shell
+ONLY checks in the places listed in the ``PATH`` environment variable.
 
-Navigate to the ``shell`` directory and list the contents. You will
+Navigate to the ``data`` directory and list the contents. You will
 notice that there is a program (executable file) called ``hello.sh`` in
 this directory. Now, try to run the program by entering::
 
@@ -763,7 +762,10 @@ Or by entering::
 When there are no ``/`` characters, the shell assumes you want to look
 in one of the default places for the program.
 
-## Writing scripts
+(Why doesn't it look at your current directory by default? Any ideas?)
+
+Writing scripts
+---------------
 
 We know how to write files and run scripts, so I bet you can guess
 where this is headed. We're going to run our own script!
@@ -792,6 +794,7 @@ Now let's try running it again
     ./awesome.sh
 
 Now you should have seen some output, and of course, it's AWESOME!
+
 Congratulations, you just created your first shell script! You're set
 to rule the world!
 
