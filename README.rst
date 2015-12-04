@@ -47,6 +47,11 @@ There are many reasons to learn about the shell.  A few specific ones:
 
 * To use remote computers or cloud computing, you need to use the shell.
 
+You can also pretend to be a `hacker from the moving pictures
+<http://moviecode.tumblr.com/>`__!
+
+.. http://www.hackertyper.com/
+
 Automation
 ~~~~~~~~~~
 
@@ -505,6 +510,13 @@ files, separated by spaces.
 What happens if you do ``ls R1*fastq``?
 
 (Time for another quizlet!)
+
+When wildcards go bad!
+----------------------
+
+TODO: explain how to deal with filenames that being with '-' (use '--'),
+have spaces (use quotes/backslashes/tab completion), and/or quotes
+(use the other kind of quotes/backslashes/tab completion).
 
 Examining Files
 ---------------
