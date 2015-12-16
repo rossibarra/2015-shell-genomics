@@ -21,6 +21,7 @@ or
 2. lists
 3. like this
 
+Here is [a link](http://www.google.com/)
 
 For multiline verbatim, I use
 
