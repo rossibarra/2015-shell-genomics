@@ -2,7 +2,7 @@
 The Shell
 =========
 
-Updated Dec 2015 by Titus Brown.
+Updated Oct 2016 by Titus Brown.
 
 Original author: Tracy Teal for Data Carpentry (http://datacarpentry.org).
 
@@ -132,12 +132,12 @@ Open up the shell and type the command::
 
 and then hit ENTER - this will give you a directory name. Remember it!
 
-We next want to download the file:
+We next want to use our Web browser to download the file:
 
    https://s3-us-west-1.amazonaws.com/dib-training.ucdavis.edu/shell-data.zip
 
-to our computer, copy it to that directory, and then unpack it in that
-directory.
+to our computer, and then use the file browser to copy it to the directory shown by ``pwd`` above.
+Now, then unpack it in that directory (probably by double clicking on it).
 
 Once that's done, type::
 
@@ -175,6 +175,10 @@ The shell has a concept of "working directory", which is basically the
 default location for commands to look when you run them.  When you run
 'ls', by default it looks in your current working directory; when you
 run 'cd', it changes your current working directory.
+
+What's the difference between 'cd' and 'data'? Here, 'cd' is the command,
+and 'data' is an *argument* to that command - think of the command as the
+verb, and the argument as the noun upon which the verb acts.
 
 Now type::
 
@@ -238,7 +242,7 @@ forward and b to go backwards. When you are done reading, hit ``q``
 to quit.
 
 Programs that are run from the shell can get extremely complicated. To
-see an example, open up the manual page for the ```find`` program.  No
+see an example, open up the manual page for the ``find`` program.  No
 one can possibly learn all of these arguments, of course. So you will
 probably find yourself referring back to the manual page frequently.
 
