@@ -26,6 +26,12 @@ Objectives
 
 - Where are resources where I can learn more?
 
+Notes
+-----
+
+This workshop operates under the Software Carpentry Code of conduct:
+http://software-carpentry.org/conduct/
+
 What is the shell?
 ------------------
 
