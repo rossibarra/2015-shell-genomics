@@ -124,7 +124,7 @@ Linux
 You probably already know how to find the shell prompt.
 
 Starting with the shell
-=======================
+-----------------------
 
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data.
