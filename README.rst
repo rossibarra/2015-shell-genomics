@@ -2,15 +2,13 @@
 The Shell
 =========
 
-Updated Oct 2016 by Titus Brown.
+Updated Oct 2022 by Jeffrey Ross-Ibarra
 
-Original author: Tracy Teal for Data Carpentry (http://datacarpentry.org).
+Original author: Tracy Teal for Data Carpentry (http://datacarpentry.org), with modifications by Titus Brown.
 
 Original contributors:
 Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for
 Software Carpentry (http://software-carpentry.org/)
-
-Note: in-class quizlets will be answered `here <https://docs.google.com/forms/d/1EsTbkRrh-E1YuXGJAXSnSby8rbXHriL5l4O5XNhm0rU/viewform>`__.
 
 Objectives
 ----------
@@ -25,12 +23,6 @@ Objectives
   * Automating actions
 
 - Where are resources where I can learn more?
-
-Notes
------
-
-This workshop operates under the Software Carpentry Code of conduct:
-http://software-carpentry.org/conduct/
 
 What is the shell?
 ------------------
@@ -52,11 +44,6 @@ There are many reasons to learn about the shell.  A few specific ones:
   transformative.
 
 * To use remote computers or cloud computing, you need to use the shell.
-
-You can also pretend to be a `hacker from the moving pictures
-<http://moviecode.tumblr.com/>`__!
-
-.. http://www.hackertyper.com/
 
 Automation
 ~~~~~~~~~~
@@ -94,15 +81,12 @@ Explain shell - a web site where you can see what the different
 components of a shell command are doing.
 
 * http://explainshell.com
-* http://www.commandlinefu.com
-
-(We'll look at these at the bottom.)
 
 How to access the shell
 -----------------------
 
 The shell is already available on Mac and Linux. For Windows, you'll
-have to download a separate program.
+have to [install bash](https://itsfoss.com/install-bash-on-windows/install).
 
 Mac
 ~~~
