@@ -69,8 +69,6 @@ Information on the shell
 
 The challenge with UNIX is that it's not particularly simple - it's a
 power tool, with its own deep internal logic with lots of details.
-The joke is that Unix is user-friendly - it's just very selective
-about who its friends are!
 
 shell cheat sheets:
 
@@ -93,7 +91,6 @@ Mac
 
 On Mac the shell is available through Terminal  
 Applications -> Utilities -> Terminal  
-Go ahead and drag the Terminal application to your Dock for easy access.
 
 Windows
 ~~~~~~~
@@ -128,6 +125,8 @@ We next want to use our Web browser to download the file:
 
 to our computer, and then use the file browser to copy it to the directory shown by ``pwd`` above.
 Now, then unpack it in that directory (probably by double clicking on it).
+
+```hands```
 
 Once that's done, type::
 
