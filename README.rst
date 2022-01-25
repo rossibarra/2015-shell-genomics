@@ -45,8 +45,8 @@ There are many reasons to learn about the shell.  A few specific ones:
 
 * To use remote computers or cloud computing, you need to use the shell.
 
-Automation
-~~~~~~~~~~
+### Automation
+
 
 The most important reason to learn the shell is to learn about
 **automation**.  Any time you find yourself doing roughly the same
@@ -86,21 +86,18 @@ How to access the shell
 The shell is already available on Mac and Linux. For Windows, you'll
 have to [install bash](https://itsfoss.com/install-bash-on-windows/install).
 
-Mac
-~~~
+#### Mac
 
-On Mac the shell is available through Terminal  
-Applications -> Utilities -> Terminal  
+On Mac the shell is available through Terminal
+Applications -> Utilities -> Terminal
 
-Windows
-~~~~~~~
+#### Windows
 
-For Windows, we're going to be using gitbash.  
+For Windows, we're going to be using gitbash.
 Download and install `gitbash <http://msysgit.github.io>`__;
 Open up the program.
 
-Linux
-~~~~~
+#### Linux
 
 You probably already know how to find the shell prompt.
 
@@ -126,14 +123,10 @@ We next want to use our Web browser to download the file:
 to our computer, and then use the file browser to copy it to the directory shown by ``pwd`` above.
 Now, then unpack it in that directory (probably by double clicking on it).
 
-```
-**Class Interaction**
+#### Class Interaction**
 Once you've complete a task, please use the reactions function on zoom and select the "yes" icon:
 
-![yes][yes.png]
-```
-
-
+.. image:: img/yes.png
 
 Once that's done, type::
 
