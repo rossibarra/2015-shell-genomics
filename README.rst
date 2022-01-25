@@ -123,11 +123,6 @@ We next want to use our Web browser to download the file:
 to our computer, and then use the file browser to copy it to the directory shown by ``pwd`` above.
 Now, then unpack it in that directory (probably by double clicking on it).
 
-#### Class Interaction**
-Once you've complete a task, please use the reactions function on zoom and select the "yes" icon:
-
-.. image:: img/yes.png
-
 Once that's done, type::
 
    ls
@@ -135,8 +130,19 @@ Once that's done, type::
 and hit ENTER.  You should see a listing of files, with 'shell-data.zip' and
 'data' among them.
 
-Once you see that, put up your green stickies.  If you don't know where to
-start, put up your pink sticky.
+#### Class Interaction
+
+Once you've complete a task, please use the reactions function on zoom and select the `yes` icon:
+
+.. image:: img/yes.png
+
+If you are *unable* to complete a task, please select the `no` icon:
+
+.. image:: img/no.png
+
+If at any time you have a question, use the `raise hand` icon:
+
+.. image:: img/hand.png
 
 Running commands
 ----------------
@@ -158,7 +164,7 @@ You should see that you're now in the data/ subdirectory (or folder)
 underneath the original directory. Type 'ls' to see what files are in
 here.
 
-What's going on?
+What's going on? Why does 'ls' give a different result?
 
 The shell has a concept of "working directory", which is basically the
 default location for commands to look when you run them.  When you run
@@ -174,14 +180,14 @@ Now type::
   cd ..
 
 and type 'ls'.  You should see at least two entries,
-``shell-data.zip`` and ``data``.  Here you're using shorthand notation
+``shell-data.zip`` and ``data`` (on some systems you may not see the zipfile).  Here you're using shorthand notation
 to go back up a directory.
 
 Type::
 
   ls data
 
-to tell ls to look in a different directory than your current working
+to tell 'ls' to look in a different directory than your current working
 directory.  This is equivalent to::
 
   cd data
@@ -404,8 +410,6 @@ typing.
 Over time, it will become easier for you to keep a mental note of the
 structure of the directories that you are using and how to quickly
 navigate amongst them.
-
-(Time for a quizlet!)
 
 Saving time with shortcuts, wild cards, and tab completion
 ----------------------------------------------------------
