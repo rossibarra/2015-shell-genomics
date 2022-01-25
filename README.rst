@@ -126,7 +126,14 @@ We next want to use our Web browser to download the file:
 to our computer, and then use the file browser to copy it to the directory shown by ``pwd`` above.
 Now, then unpack it in that directory (probably by double clicking on it).
 
-`
+```
+**Class Interaction**
+Once you've complete a task, please use the reactions function on zoom and select the "yes" icon:
+
+![yes][yes.png]
+```
+
+
 
 Once that's done, type::
 
