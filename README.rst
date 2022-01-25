@@ -126,7 +126,7 @@ We next want to use our Web browser to download the file:
 to our computer, and then use the file browser to copy it to the directory shown by ``pwd`` above.
 Now, then unpack it in that directory (probably by double clicking on it).
 
-```hands```
+`
 
 Once that's done, type::
 
