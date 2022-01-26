@@ -1,8 +1,8 @@
-=========
-The Shell
-=========
 
-Updated Oct 2022 by Jeffrey Ross-Ibarra
+# The Shell
+
+
+Updated Jan 2022 by Jeffrey Ross-Ibarra
 
 Original author: Tracy Teal for Data Carpentry (http://datacarpentry.org), with modifications by Titus Brown.
 
@@ -10,8 +10,8 @@ Original contributors:
 Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for
 Software Carpentry (http://software-carpentry.org/)
 
-Objectives
-----------
+## Objectives
+
 
 - What is the shell?
 - How do you access it?
@@ -24,8 +24,7 @@ Objectives
 
 - Where are resources where I can learn more?
 
-What is the shell?
-------------------
+## What is the shell?
 
 The *shell* is a program that presents a command line interface
 which allows you to control your computer using commands entered
@@ -47,7 +46,6 @@ There are many reasons to learn about the shell.  A few specific ones:
 
 ### Automation
 
-
 The most important reason to learn the shell is to learn about
 **automation**.  Any time you find yourself doing roughly the same
 computational task more than few times, it may be worth automating it;
@@ -55,7 +53,7 @@ the shell is often the best way to automate anything to do with files.
 
 Part of our goal is to make you aware of this dynamic:
 
-.. image:: img/gvng.jpg
+![image](img/gvng.jpg)
 
 And here's a handy chart explaining when it pays to automate a task:
 
@@ -64,8 +62,7 @@ https://xkcd.com/1205/
 Today we're going to go through how to access Unix/Linux and some of the basic
 shell commands.
 
-Information on the shell
-------------------------
+## Information on the shell
 
 The challenge with UNIX is that it's not particularly simple - it's a
 power tool, with its own deep internal logic with lots of details.
@@ -80,8 +77,7 @@ components of a shell command are doing.
 
 * http://explainshell.com
 
-How to access the shell
------------------------
+## How to access the shell
 
 The shell is already available on Mac and Linux. For Windows, you'll
 have to [install bash](https://itsfoss.com/install-bash-on-windows/install).
@@ -93,16 +89,13 @@ Applications -> Utilities -> Terminal
 
 #### Windows
 
-For Windows, we're going to be using gitbash.
-Download and install `gitbash <http://msysgit.github.io>`__;
-Open up the program.
+Navigate to the folder you want to open in File Explorer and type `bash` in the address bar and press enter.
 
 #### Linux
 
 You probably already know how to find the shell prompt.
 
-Starting with the shell
------------------------
+## Starting with the shell  
 
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data.
@@ -110,9 +103,9 @@ by manipulating some experimental data.
 Now we're going to download the data for the tutorial. For this you'll need
 internet access, because you're going to get it off the web.
 
-Open up the shell and type the command::
+Open up the shell and type the command:
 
-   pwd
+    pwd
 
 and then hit ENTER - this will give you a directory name. Remember it!
 
@@ -120,133 +113,126 @@ We next want to use our Web browser to download the file:
 
    https://s3-us-west-1.amazonaws.com/dib-training.ucdavis.edu/shell-data.zip
 
-to our computer, and then use the file browser to copy it to the directory shown by ``pwd`` above.
-Now, then unpack it in that directory (probably by double clicking on it).
+to our computer, and then use the file browser to copy it to the directory shown by `pwd` above. Now, then unpack it in that directory (probably by double clicking on it).
 
-Once that's done, type::
+Once that's done, type:
 
-   ls
+       ls
 
-and hit ENTER.  You should see a listing of files, with 'shell-data.zip' and
-'data' among them.
+and hit ENTER.  You should see a listing of files, with  `data` and maybe `shell-data.zip` among them.
 
-#### Class Interaction  
+<!--#### Class Interaction  
 
 Once you've complete a task, please use the reactions function on zoom and select the `yes` icon:
 
-.. image:: img/yes.png
+![image](img/yes.png)
 
 If you are *unable* to complete a task, please select the `no` icon:
 
-.. image:: img/no.png
+![image](img/no.png)
 
 If at any time you have a question, use the `raise hand` icon:
 
-.. image:: img/hand.png
+![image](img/hand.png)-->
 
-Running commands
-----------------
+## Running commands
 
-'pwd' and 'ls' are examples of commands - programs you run at the shell
-prompt that do stuff. pwd stands for 'print working directory', while
-'ls' stands for 'list files'.
+`pwd` and `ls` are examples of commands - programs you run at the shell
+prompt that do stuff. `pwd` stands for 'print working directory', while
+`ls` stands for 'list files'. One of the main philosophies of UNIX is to make each program do one thing well, and build build new tools for new jobs rather than complicate old programs by adding new "features". This means there are a lot of different UNIX programs you may find yourself using, but you can do quite a lot of powerful stuff with surprisingly few in the right combinations.
 
-Another command you'll find yourself using a lot is 'cd', which stands
-for 'change directory'.  Try typing::
+A command you'll find yourself using a lot is `cd`, which stands
+for 'change directory'.  Try typing:
 
-   cd data
+     cd data
 
-and then::
+and then:
 
-   pwd
+     pwd
 
 You should see that you're now in the data/ subdirectory (or folder)
-underneath the original directory. Type 'ls' to see what files are in
+underneath the original directory. Type `ls` to see what files are in
 here.
 
-What's going on? Why does 'ls' give a different result?
+What's going on? Why does `ls` give a different result?
 
 The shell has a concept of "working directory", which is basically the
 default location for commands to look when you run them.  When you run
-'ls', by default it looks in your current working directory; when you
-run 'cd', it changes your current working directory.
+`ls`, by default it looks in your current working directory; when you
+run `cd`, it changes your current working directory.
 
-What's the difference between 'cd' and 'data'? Here, 'cd' is the command,
+What's the difference between `cd` and 'data'? Here, `cd` is the command,
 and 'data' is an *argument* to that command - think of the command as the
 verb, and the argument as the noun upon which the verb acts.
 
-Now type::
+Now type:
 
-  cd ..
+    cd ..
 
-and type 'ls'.  You should see at least two entries,
-``shell-data.zip`` and ``data`` (on some systems you may not see the zipfile).  Here you're using shorthand notation
+and type `ls`.  You should see at least 'data' (on some systems you may not see the  'shell-data.zip' file).  Here you're using shorthand notation
 to go back up a directory.
 
-Type::
+Type:
 
-  ls data
+    ls data
 
-to tell 'ls' to look in a different directory than your current working
-directory.  This is equivalent to::
+to tell `ls` to look in a different directory than your current working
+directory.  This is equivalent to:
 
-  cd data
-  ls
-  cd ..
+      cd data
+      ls
+      cd ..
 
-Files and directories
-~~~~~~~~~~~~~~~~~~~~~
+### Files and directories
 
-Go back into the 'data' directory and list the files::
+Go back into the 'data' directory and list the files:
 
-   cd data
-   ls
+    cd data
+    ls
 
 In here, all mixed up together are files and directories/folders. If
-we want to know which is which, we can type::
+we want to know which is which, we can type:
 
-    ls -F
+      ls -F
 
-Anything with a "/" after it is a directory.  Things with a "*" after
-them are programs.  It there's nothing there it's an otherwise
+Anything with a '/'' after it is a directory.  Things with a '*' after
+them are programs.  If there's nothing there it's an otherwise
 unremarkable file (e.g. a data file).
 
-You can also use the command::
+You can also use the command:
 
-    ls -l
+      ls -l
 
 to see whether items in a directory are files or directories. `ls -l`
-gives a lot more information too, such as the size of the file.
+gives a lot more information too, such as the size of the file. Most unix programs offer a number of powerful options. Want to list the files sorted by size in a human readable format? Try:
 
-Command line options
-~~~~~~~~~~~~~~~~~~~~
+    ls -lSh
+
+### Command line options
 
 Most programs take additional options (or "arguments") that control
 their exact behavior. For example, `-F` and `-l` are arguments to
-`ls`.  The `ls` program, like many programs, take a lot of
+`ls`.  The `ls` program, like many programs, takes a lot of
 arguments. But how do we know what the options are to particular
 commands?
 
 Most commonly used shell programs have a manual. You can access the
-manual using the `man` program. Try entering::
+manual using the `man` program. Try entering:
 
-    man ls
+      man ls
 
-This will open the manual page for ``ls``. Use the space key to go
-forward and b to go backwards. When you are done reading, hit ``q``
-to quit.
+This will open the manual page for `ls`. Use the space key to go forward and `b` to go backwards. When you are done reading, hit `q` to quit.
 
 Programs that are run from the shell can get extremely complicated. To
 see an example, open up the manual page for the ``find`` program.  No
 one can possibly learn all of these arguments, of course. So you will
 probably find yourself referring back to the manual page frequently.
 
-The Unix directory file structure (a.k.a. where am I?)
-------------------------------------------------------
+## The Unix directory file structure (a.k.a. where am I?)
 
 As you've already just seen, you can move around in different directories
 or folders at the command line. Why would you want to do this, rather
-than just navigating around the normal way.
+than just navigating around the normal way?
 
 When you're working with bioinformatics programs, you're working with
 your data and it's key to be able to have that data in the right place
@@ -254,8 +240,7 @@ and make sure the program has access to the data. Many of the problems
 people run in to with command line bioinformatics programs is not having the
 data in the place the program expects it to be.
 
-Moving around the file system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Moving around the file system
 
 Let's practice moving around a bit.
 
@@ -270,7 +255,7 @@ First we did something like go to the folder of our username. Then we opened
 This is called a hierarchical file system structure, like an upside down tree
 with root (/) at the base that looks like this.
 
-.. image:: img/Slide1.jpg
+![slide1](img/Slide1.jpg)
 
 That (/) at the base is often also called the 'top' level.
 
@@ -280,20 +265,20 @@ you are on one of the branches of that tree, your home directory
 
 Now let's go do that same navigation at the command line.
 
-Type::
+Type:
 
-    cd
+      cd
 
 This puts you in your home directory. This folder here.
 
-Now using ``cd`` and ``ls``, go in to the 'data' directory and list its
+Now using `cd` and `ls`, go in to the 'data' directory and list its
 contents.
 
 Let's also check to see where we are. Sometimes when we're wandering
 around in the file system, it's easy to lose track of where we are and
 get lost.
 
-Again, if you want to know what directory you're currently in, type::
+Again, if you want to know what directory you're currently in, type:
 
     pwd
 
@@ -302,50 +287,49 @@ type ``cd home``? Try it and see what happens.
 
 To go 'back up a level' we need to use ``..``.
 
-Type::
+Type:
 
     cd ..
 
 Now do ``ls`` and ``pwd``. See now that we went back up in to the home
 directory. ``..`` means go back up to the enclosing folder level.
 
-Looking within folders within folder within...
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Looking within folders within folder within...
 
-Try entering::
+
+Try entering:
 
     cd data/.hidden
 
 and you will jump directly to ``.hidden`` without having to go through
-the intermediate directory.  Here, we're telling cd to go into 'data'
+the intermediate directory.  Here, we're telling `cd` to go into 'data'
 first, and then '.hidden'.
 
-Then do::
+Then do:
 
     cd ../..
 
 to go back up two levels.  (Try typing ``pwd`` to see where you are!)
 
 You could put more directories and a file
-on the end, too; for example, ::
+on the end, too; for example:
 
     ls data/.hidden/tmp1/notit.txt
 
 You can do the same thing with any UNIX command that takes a file or
 directory name.
 
-Shortcut: Tab Completion
-~~~~~~~~~~~~~~~~~~~~~~~~
+### Shortcut: Tab Completion
 
 Navigate to the home directory. Typing out directory names can waste a
 lot of time. When you start typing out the name of a directory, then
 hit the tab key, the shell will try to fill in the rest of the
-directory name. For example, type ``cd`` to get back to your home directy, then enter::
+directory name. For example, type ``cd`` to get back to your home directy, then enter:
 
     cd da<tab>
 
 The shell will fill in the rest of the directory name for
-'data'. Now cd to data/MiSeq and try::
+'data'. Now cd to data/MiSeq and try:
 
     ls F3D<tab><tab>
 
@@ -359,15 +343,14 @@ enter ``e<tab><tab>``. You will see the name of every program that
 starts with an ``e``. One of those is ``echo``. If you enter ``ec<tab>`` you
 will see that tab completion works.
 
-Full vs. Relative Paths
------------------------
+## Full vs. Relative Paths
 
 The ``cd`` command takes an argument which is the directory
 name. Directories can be specified using either a *relative* path or a
 full *path*. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory. Now, enter the ``pwd``
-command and you should see::
+command and you should see:
 
     /home/username
 
@@ -378,12 +361,12 @@ very top of the hierarchy is a directory called ``/`` which is usually
 referred to as the *root directory*. So, to summarize: ``username`` is a
 directory in ``home`` which is a directory in ``/``.
 
-Now enter the following command::
+Now enter the following command:
 
     cd /home/username/data/.hidden
 
 This jumps to ``.hidden``. Now go back to the home directory (cd). We saw
-earlier that the command::
+earlier that the command:
 
     cd data/.hidden
 
@@ -411,36 +394,34 @@ Over time, it will become easier for you to keep a mental note of the
 structure of the directories that you are using and how to quickly
 navigate amongst them.
 
-Saving time with shortcuts, wild cards, and tab completion
-----------------------------------------------------------
+## Saving time with shortcuts, wild cards, and tab completion
 
-Shortcuts
-~~~~~~~~~
+### Shortcuts
 
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. So, in the shell the tilde character,
-""~"", is a shortcut for your home directory. Navigate to the ``data``
-directory::
+'~', is a shortcut for your home directory. Navigate to the ``data``
+directory:
 
     cd
     cd data
 
-Then enter the command::
+Then enter the command:
 
     ls ~
 
 This prints the contents of your home directory, without you having to
 type the full path. The shortcut ``..`` always refers to the directory
-above your current directory. Thus::
+above your current directory. Thus:
 
     ls ..
 
-prints the contents of the /home/username directory. You can chain
-these together, so::
+prints the contents of the '/home/username' directory. You can chain
+these together, so:
 
     ls ../../
 
-prints the contents of ``/home' which is above your home
+prints the contents of `/home` which is above your home
 directory. Finally, the special directory ``.`` always refers to your
 current directory. So, ``ls``, ``ls .``, and ``ls ././././.`` all do the
 same thing, they print the contents of the current directory. This may
@@ -452,37 +433,31 @@ To summarize, while you are in the ``shell`` directory, the commands
 exactly the same thing. These shortcuts are not necessary, they are
 provided for your convenience.
 
-A data set: FASTQ files
------------------------
+## A data set: FASTQ files
 
 We did an experiment and want to look at the bacterial communities of
 mice in two treatments using 16S sequencing. We have 10 mice in one
-treatment and 9 in another.each treatment. We also sequenced a Mock
-community, so we can check the quality of our data. So, we have 20
-samples all together and we've done paired-end MiSeq sequencing.
+treatment and 9 in another. We also sequenced a mock community, so we can check the quality of our data. So, we have 20 samples all together and we've done paired-end MiSeq sequencing.
 
 We get our data back from the sequencing center as FASTQ files, and we
-stick them all in a folder called MiSeq. This data is actually data
-generated by Pat Schloss and used in mothur tutorials.
+stick them all in a folder called MiSeq. This data is actually data generated by Pat Schloss and used in mothur tutorials.
 
-We want to be able to look at these files and do some things with
-them.
+We want to be able to look at these files and do some things with them.
 
-Wild cards
-~~~~~~~~~~
+### Wild cards
 
 Navigate to the ``data/MiSeq`` directory (hint: use ``cd``). This
 directory contains our FASTQ files and some other ones we'll need for
 analyses. If we type ``ls``, we will see that there are a bunch of
-files with long file names.  Some of them end with .fastq.
+files with long file names.  Some of them end with '.fastq'.
 
 The ``*`` character is a shortcut for "everything". Thus, if you enter
 ``ls *``, you will see all of the contents of a given directory. Now try
-this command::
+this command:
 
     ls *fastq
 
-This lists every file that ends with a ``fastq``. This command::
+This lists every file that ends with a ``fastq``. This command:
 
     ls /usr/bin/*.sh
 
@@ -490,7 +465,7 @@ Lists every file in ``/usr/bin`` that ends in the characters ``.sh``.
 
 We have paired end sequencing, so for every sample we have two
 files. If we want to just see the list of the files for the forward
-direction sequencing we can use::
+direction sequencing we can use:
 
     ls *R1*fastq
 
@@ -498,7 +473,7 @@ lists every file in the current directory whose name contains the
 number ``R1``, and ends with ``fastq``. There are twenty such files which
 we would expect because we have 20 samples.
 
-So how does this actually work? Well...when the shell (bash) sees a
+So how does this actually work? When the shell (bash) sees a
 word that contains the ``*`` character, it automatically looks for
 filenames that match the given pattern. In this case, it identified
 four such files. Then, it replaced the ``*R1*fastq`` with the list of
@@ -506,27 +481,16 @@ files, separated by spaces.
 
 What happens if you do ``ls R1*fastq``?
 
-(Time for another quizlet!)
+## Examining Files 
 
-When wildcards go bad!
-----------------------
-
-TODO: explain how to deal with filenames that being with '-' (use '--'),
-have spaces (use quotes/backslashes/tab completion), and/or quotes
-(use the other kind of quotes/backslashes/tab completion).
-
-Examining Files
----------------
-
-We now know how to switch directories, run programs, and look at the
-contents of directories, but how do we look at the contents of files?
+We now know how to switch directories, run unix programs, and look at the contents of directories, but how do we look at the contents of files?
 
 The easiest way to examine a file is to just print out all of the
-contents using the program ``cat``. Enter the following command::
+contents using the program ``cat``. Enter the following command:
 
     cat F3D0_S188_L001_R1_001.fastq
 
-This prints out the contents of the ``F3D0_S188_L001_R1_001.fastq`` file.
+This prints out the contents of the ``F3D0_S188_L001_R1_001.fastq`` file. Note you probably *don't* want to do this with most real fastq files as they can be hundreds of millions of lines long!
 
 1.  Print out the contents of the ``~/data/MiSeq/stability.files``
     file. What does this file contain?
@@ -539,7 +503,7 @@ This prints out the contents of the ``F3D0_S188_L001_R1_001.fastq`` file.
 
 Make sure we're in the right place for the next set of the lessons. We
 want to be in the ``MiSeq`` directory. Check if you're there with ``pwd``
-and if not navigate there. One way to do that would be ::
+and if not navigate there. One way to do that would be :
 
     cd ~/data/MiSeq
 
@@ -547,13 +511,11 @@ and if not navigate there. One way to do that would be ::
 
 ``cat`` is a terrific program, but when the file is really big, it can
 be annoying to use. The program, ``less``, is useful for this
-case. Enter the following command::
+case. Enter the following command:
 
     less F3D0_S188_L001_R1_001.fastq
 
-``less`` opens the file, and lets you navigate through it. The commands
-are identical to the ``man`` program.
-
+``less`` opens the file, and lets you navigate through it. 
 **Some commands in ``less``**
 
 | key     | action |
@@ -567,52 +529,45 @@ are identical to the ``man`` program.
 ``less`` also gives you a way of searching through files. Just hit the
 "/" key to begin a search. Enter the name of the word you would like
 to search for and hit enter. It will jump to the next location where
-that word is found. Try searching the ``dictionary.txt`` file for the
-word "cat". If you hit "/" then "enter", ``less`` will just repeat
+that word is found. Try searching for the sequence ``1101:14341`` in our file.  If you hit "/" then "enter", ``less`` will just repeat
 the previous search. ``less`` searches from the current location and
-works its way forward. If you are at the end of the file and search
-for the word "cat", ``less`` will not find it. You need to go to the
+works its way forward. If you are at the end of the file and search, ``less`` will not find it. You need to go to the
 beginning of the file and search.
 
-For instance, let's search for the sequence ``1101:14341`` in our file.
-You can see that we go right to that sequence and can see
-what it looks like.
-
-Remember, the ``man`` program actually uses ``less`` internally and
+The ``man`` program actually uses ``less`` internally and
 therefore uses the same commands, so you can search documentation
 using "/" as well!
 
 There's another way that we can look at files, and in this case, just
 look at part of them. This can be particularly useful if we just want
-to see the beginning or end of the file, or see how it's formatted.
+to see the beginning or end of the file or see how it's formatted.
 
 The commands are ``head`` and ``tail`` and they just let you look at
-the beginning and end of a file respectively. ::
+the beginning and end of a file respectively. :
 
-   head F3D0_S188_L001_R1_001.fastq
-   tail F3D0_S188_L001_R1_001.fastq
+ 	  head F3D0_S188_L001_R1_001.fastq
+ 	  tail F3D0_S188_L001_R1_001.fastq
 
 The ``-n`` option to either of these commands can be used to print the
 first or last ``n`` lines of a file. To print the first/last line of the
-file use::
+file use:
 
-   head -n 1 F3D0_S188_L001_R1_001.fastq
-   tail -n 1 F3D0_S188_L001_R1_001.fastq
+	   head -n 1 F3D0_S188_L001_R1_001.fastq
+	   tail -n 1 F3D0_S188_L001_R1_001.fastq
 
-Searching files
----------------
+## Searching files
 
 We showed a little how to search within a file using ``less``. We can also
 search within files without even opening them, using ``grep``. Grep is a command-line
 utility for searching plain-text data sets for lines matching a string or regular expression.
 Let's give it a try!
 
-Let's search for that sequence 1101:14341 in the F3D0_S188_L001_R1_001.fastq file. ::
+Let's search for that sequence 1101:14341 in the F3D0_S188_L001_R1_001.fastq file. :
 
     grep 1101:14341 F3D0_S188_L001_R1_001.fastq
 
 We get back the whole line that had '1101:14341' in it. What if we wanted all
-four lines, the whole part of that FASTQ sequence, back instead. ::
+four lines, the whole part of that FASTQ sequence, back instead:
 
     grep -A 3 1101:14341 F3D0_S188_L001_R1_001.fastq
 
@@ -628,14 +583,14 @@ what if we want to do normal things like copy files or move them
 around or get rid of them. Sure we could do most of these things
 without the command line, but what fun would that be?! Besides it's
 often faster to do it at the command line, or you'll be on a remote
-server like Amazon where you won't have another option.
+server where you won't have another option.
 
 The stability.files file is one that tells us what sample name
 goes with what sequences. This is a really important file, so
 we want to make a copy so we don't lose it.
 
 Lets copy the file using the ``cp`` command. The ``cp``
-command backs up the file. Navigate to the ``MiSeq`` directory and enter::
+command backs up the file. Navigate to the ``MiSeq`` directory and enter:
 
     cp stability.files stability.files_backup
 
@@ -644,12 +599,12 @@ Now ``stability.files_backup`` has been created as a copy of ``stability.files``
 Let's make a ``backup`` directory where we can put this file.
 
 The ``mkdir`` command is used to make a directory. Just enter ``mkdir``
-followed by a space, then the directory name. ::
+followed by a space, then the directory name. :
 
     mkdir backup
 
 We can now move our backed up file in to this directory. We can
-move files around using the command ``mv``. Enter this command::
+move files around using the command ``mv``. Enter this command:
 
     mv stability.files_backup backup/
 
@@ -657,12 +612,12 @@ This moves ``stability.files_backup`` into the directory ``backup/``;
 the full path would be ``~/data/MiSeq/backup``.
 
 The ``mv`` command is also how you rename files. Since this file is so
-important, let's rename it::
+important, let's rename it:
 
     mv stability.files stability.files_IMPORTANT
 
 Now the file name has been changed to stability.files_IMPORTANT. Let's delete
-the backup file now::
+the backup file now:
 
     rm backup/stability.files_backup
 
@@ -673,10 +628,8 @@ By default, ``rm``, will NOT delete directories. You can tell ``rm`` to
 delete a directory using the ``-r`` option; we could test it out on
 backup, but let's not... ;)
 
-(Time for a quizlet again!)
 
-Writing files
--------------
+## Writing files
 
 We've been able to do a lot of work with files that already exist, but what
 if we want to write our own files. Obviously, we're not going to type in
@@ -685,17 +638,17 @@ a lot of reasons we'll want to write a file, or edit an existing file.
 
 To write in files, we're going to use the program ``nano``. We're
 going to create a file that contains the favorite grep command so you
-can remember it for later. We'll name this file 'awesome.sh'::
+can remember it for later. We'll name this file 'awesome.sh':
 
     nano awesome.sh
 
 Now you have something that looks like
 
-.. image:: img/nano1.png
+![image](img/nano1.png)
 
 Type in your command, so it looks like
 
-.. image:: img/nano2.png
+![image](img/nano2.png)
 
 Now we want to save the file and exit. At the bottom of nano, you see
 the "^X Exit". That means that we use Ctrl-X to exit. Type
@@ -704,37 +657,36 @@ it asks if you want that file name. Hit 'Enter'.
 
 Now you've written a file. You can take a look at it with less or cat, or open it up again and edit it.
 
-**Exercise**
+#### Exercise
 
 Open 'awesome.sh' and add "echo AWESOME!" after the grep command and save the file.
 
 We're going to come back and use this file in just a bit.
 
-Running programs, revisited
----------------------------
+## Running programs, revisited
 
 Commands like ``ls``, ``rm``, ``echo``, and ``cd`` are just ordinary programs
 on the computer. A program is just a file that you can *execute*. The
 program ``which`` tells you the location of a particular program. For
-example::
+example:
 
     which ls
 
 will return "/bin/ls". Thus, we can see that ``ls`` is a program that
-sits inside of the ``/bin`` directory. Now enter::
+sits inside of the ``/bin`` directory. Now enter:
 
     which find
 
 You will see that ``find`` is a program that sits inside of the
 ``/usr/bin`` directory.
 
-So ... when we enter a program name, like ``ls``, and hit enter, how
+So... when we enter a program name, like ``ls``, and hit enter, how
 does the shell know where to look for that program? How does it know
 to run ``/bin/ls`` when we enter ``ls``. The answer is that when we enter
 a program name and hit enter, there are a few standard places that the
 shell automatically looks. If it can't find the program in any of
 those places, it will print an error saying "command not found". Enter
-the command::
+the command:
 
     echo $PATH
 
@@ -746,34 +698,31 @@ ONLY checks in the places listed in the ``PATH`` environment variable.
 
 Navigate to the ``data`` directory and list the contents. You will
 notice that there is a program (executable file) called ``hello.sh`` in
-this directory. Now, try to run the program by entering::
+this directory. Now, try to run the program by entering:
 
     hello.sh
 
 You should get an error saying that hello.sh cannot be found. That is
 because the directory ``/home/username/data`` is not in the
-``PATH``. You can run the ``hello.sh`` program by entering::
+``PATH``. You can run the ``hello.sh`` program by entering:
 
     ./hello.sh
 
 Remember that ``.`` is a shortcut for the current working
 directory. This tells the shell to run the ``hello.sh`` program which is
 located right here. So, you can run any program by entering the path
-to that program. You can run ``hello.sh`` equally well by specifying::
+to that program. You can run ``hello.sh`` equally well by specifying:
 
     /home/username/data/hello.sh
 
-Or by entering::
+Or by entering:
 
     ~/data/hello.sh
 
 When there are no ``/`` characters, the shell assumes you want to look
 in one of the default places for the program.
 
-(Why doesn't it look at your current directory by default? Any ideas?)
-
-Writing scripts
----------------
+## Writing scripts
 
 We know how to write files and run scripts, so I bet you can guess
 where this is headed. We're going to run our own script!
@@ -784,7 +733,7 @@ like it so much, we might want to run it again, or even all the
 time. Instead of writing it out every time, we can just run it as a
 script.
 
-It's a command, so we should just be able to run it. Give it try.::
+It's a command, so we should just be able to run it. Give it try.:
 
     ./awesome.sh
 
@@ -793,11 +742,11 @@ we haven't told the computer that it's a program. To do that we have
 to make it 'executable'. We do this by changing its mode. The command
 for that is ``chmod`` - change mode. We're going to change the mode of
 this file, so that it's executable and the computer knows it's OK to
-run it as a program.::
+run it as a program.:
 
     chmod +x awesome.sh
 
-Now let's try running it again::
+Now let's try running it again:
 
     ./awesome.sh
 
@@ -806,10 +755,9 @@ Now you should have seen some output, and of course, it's AWESOME!
 Congratulations, you just created your first shell script! You're set
 to rule the world!
 
-Challenge:
-~~~~~~~~~~
+### Challenge:
 
-write a script that:
+Write a script that:
 
 - resides in the data directory;
 - changes to the MiSeq/ subdirectory of the current working directory;
@@ -817,9 +765,6 @@ write a script that:
 - moves all of the R1 sequencing files into the left directory;
 - moves all of the R2 sequencing files into the right directory;
 
------
-
-And we're done!
 
 More resources
 --------------
@@ -829,16 +774,15 @@ More resources
 - `explainshell.com <http://explainshell.com>`__
 - http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
 - man bash
-- Google - if you don't know how to do something, try Googling it. Other people
-  have probably had the same question.
+- Google - if you don't know how to do something, try Googling it. Other people have probably had the same question. 
 
-Most importantly - learn by doing. There's no real other way to learn
+Most importantly - learn by doing. There's no better way to learn
 this than by trying it out.  Write your next paper in nano (really
 emacs or vi), open pdfs from the command line, automate something you
 don't really need to automate....
 
 Some books you should look into --
 
-1. `Practical Computing for Biologists <http://practicalcomputing.org/>`__
+1. [Practical Computing for Biologists](http://practicalcomputing.org)
 
-2. `Bioinformatics Data Skills <http://shop.oreilly.com/product/0636920030157.do>`__
+2. [Bioinformatics Data Skills](http://shop.oreilly.com/product/0636920030157.do)
