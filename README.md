@@ -311,6 +311,8 @@ Then do:
 
 to go back up two levels.  (Try typing ``pwd`` to see where you are!)
 
+Note that you can't see the ".hidden" directory with `ls` unless you use a special flag `ls -a` to see all files, including those that are hidden (starting with a ".").
+
 You could put more directories and a file
 on the end, too; for example:
 
